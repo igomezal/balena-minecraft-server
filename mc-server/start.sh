@@ -34,7 +34,7 @@ if [[ -z "$JAR_FILE" ]]; then
 fi
 
 if [[ -z "$RAM" ]]; then
-  RAM="1G"
+  RAM="4G"
 fi
 
 if [[ -z "$FLAGS" ]]; then

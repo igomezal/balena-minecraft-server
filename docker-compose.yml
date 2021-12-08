@@ -8,7 +8,6 @@ services:
     labels:
       io.balena.features.dbus: 1
       io.balena.features.supervisor-api: 1
-      io.balena.features.journal-logs: 1
     volumes:
       - serverfiles:/usr/src/serverfiles
       - servercache:/servercache
@@ -24,7 +23,6 @@ services:
     privileged: false
     labels:
       io.balena.features.dbus: 1
-      io.balena.features.journal-logs: 1
     volumes:
       - serverfiles:/serverfiles
       - servercache:/servercache
@@ -39,14 +37,11 @@ services:
     labels:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
-      io.balena.features.journal-logs: 1
   balena-rcon:
     network_mode: host
     restart: always
     build: ./balena-rcon
     privileged: true
-    labels:
-      io.balena.features.journal-logs: 1
     ports:
       - "25575:25575/udp"
       - "25575:25575/tcp"

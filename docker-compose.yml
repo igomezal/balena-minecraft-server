@@ -29,7 +29,6 @@ services:
     volumes:
       - serverfiles:/serverfiles
       - servercache:/servercache
-      - logs:/var/log/journal
     ports:
       - "22:22/udp"
       - "22:22/tcp"
@@ -42,8 +41,6 @@ services:
       io.balena.features.dbus: '1'
       io.balena.features.firmware: '1'
       io.balena.features.journal-logs: 1
-    volumes:
-      - logs:/var/log/journal
   balena-rcon:
     network_mode: host
     restart: always
@@ -51,8 +48,6 @@ services:
     privileged: true
     labels:
       io.balena.features.journal-logs: 1
-    volumes:
-      - logs:/var/log/journal
     ports:
       - "25575:25575/udp"
       - "25575:25575/tcp"
